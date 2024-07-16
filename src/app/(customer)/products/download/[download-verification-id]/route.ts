@@ -1,4 +1,4 @@
-import db from "@/prisma/db";
+import db from "../../../../../../prisma/db"
 import { NextRequest, NextResponse } from "next/server"
 import fs from "fs/promises"
 
@@ -14,7 +14,9 @@ export async function GET(
     })
 
     if (data == null) {
-        return NextResponse.redirect(new URL("/products/download/expired", req.url))
+        return NextResponse.redirect(
+            new URL("/products/download/expired", req.url)
+        )
     }
 
     const { size } = await fs.stat(data.product.filePath)

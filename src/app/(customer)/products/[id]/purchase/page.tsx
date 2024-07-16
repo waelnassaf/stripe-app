@@ -1,4 +1,4 @@
-import db from "@/prisma/db"
+import db from "../../../../../../prisma/db"
 import { notFound } from "next/navigation"
 import Stripe from "stripe"
 import { CheckoutForm } from "./_components/checkout-form"

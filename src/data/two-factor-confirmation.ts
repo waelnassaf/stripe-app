@@ -1,4 +1,4 @@
-import db from "@/prisma/db"
+import db from "../../prisma/db"
 
 export const getTwoFactorConfirmationByUserId = async (userId: string) => {
     try {

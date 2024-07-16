@@ -1,6 +1,6 @@
 "use server"
 
-import db from "@/prisma/db"
+import db from "../../../../../prisma/db"
 import OrderHistoryEmail from "@/email/order-history"
 import { Resend } from "resend"
 import { z } from "zod"

@@ -1,6 +1,6 @@
 "use server"
 
-import db from "@/prisma/db"
+import db from "../../prisma/db"
 import { z } from "zod"
 import fs from "fs/promises"
 import { notFound, redirect } from "next/navigation"

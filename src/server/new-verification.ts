@@ -1,6 +1,6 @@
 "use server"
 
-import db from "@/prisma/db"
+import db from "../../prisma/db"
 import { getUserByEmail } from "@/data/user"
 import { getVerificationTokenByToken } from "@/data/verification-token"
 

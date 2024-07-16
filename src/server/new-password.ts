@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs"
 
 import { getUserByEmail } from "@/data/user"
 import { NewPasswordSchema } from "@/schemas"
-import prisma from "@/prisma/client"
+import prisma from "../../prisma/client"
 import { getPasswordResetTokenByToken } from "@/data/password-reset-token"
 
 export const newPassword = async (

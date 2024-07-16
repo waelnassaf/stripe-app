@@ -1,5 +1,5 @@
 import Link from "next/link"
-import db from "@/prisma/db"
+import db from "../../../../../prisma/db"
 import { formatCurrency, formatNumber } from "@/lib/formatters"
 import { FaEllipsisVertical } from "react-icons/fa6"
 import {

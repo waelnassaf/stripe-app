@@ -1,6 +1,6 @@
 "use server"
 
-import db from "@/prisma/db"
+import db from "../../prisma/db"
 import { notFound } from "next/navigation"
 
 export async function userOrderExists(email: string, productId: string) {
