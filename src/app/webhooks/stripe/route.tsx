@@ -1,3 +1,5 @@
+//This route is not functioning at all!!
+
 import db from "@/prisma/db";
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
@@ -57,6 +59,8 @@ export async function POST(req: NextRequest) {
         />
       ),
     })
+  } else {
+    console.log("Not success")
   }
   return new NextResponse()
 }

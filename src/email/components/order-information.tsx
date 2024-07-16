@@ -17,10 +17,10 @@ type OrderInformationProps = {
 const dateFormatter = new Intl.DateTimeFormat("en", { dateStyle: "medium" })
 
 export function OrderInformation({
-                                     order,
-                                     product,
-                                     downloadVerificationId,
-                                 }: OrderInformationProps) {
+    order,
+    product,
+    downloadVerificationId,
+}: OrderInformationProps) {
     return (
         <>
             <Section>
@@ -53,15 +53,17 @@ export function OrderInformation({
                 <Img
                     width="100%"
                     alt={product.name}
-                    src={`${process.env.NEXT_PUBLIC_SERVER_URL}${product.imagePath}`}
+                    src={`${process.env.NEXT_PUBLIC_APP_URL}${product.imagePath}`}
                 />
                 <Row className="mt-8">
                     <Column className="align-bottom">
-                        <Text className="text-lg font-bold m-0 mr-4">{product.name}</Text>
+                        <Text className="text-lg font-bold m-0 mr-4">
+                            {product.name}
+                        </Text>
                     </Column>
                     <Column align="right">
                         <Button
-                            href={`${process.env.NEXT_PUBLIC_SERVER_URL}/products/download/${downloadVerificationId}`}
+                            href={`${process.env.NEXT_PUBLIC_APP_URL}/products/download/${downloadVerificationId}`}
                             className="bg-black text-white px-6 py-4 rounded text-lg"
                         >
                             Download
@@ -70,7 +72,9 @@ export function OrderInformation({
                 </Row>
                 <Row>
                     <Column>
-                        <Text className="text-gray-500 mb-0">{product.description}</Text>
+                        <Text className="text-gray-500 mb-0">
+                            {product.description}
+                        </Text>
                     </Column>
                 </Row>
             </Section>

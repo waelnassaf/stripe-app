@@ -1,7 +1,7 @@
 import { Nav, NavLink } from "@/components/admin/nav"
 
 //???
-// export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic"
 
 export default function Layout({
     children,

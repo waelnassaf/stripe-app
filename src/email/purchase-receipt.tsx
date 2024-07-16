@@ -1,13 +1,13 @@
-    import {
-        Body,
-        Container,
-        Head,
-        Heading,
-        Html,
-        Preview,
-        Tailwind,
-    } from "@react-email/components"
-import { OrderInformation } from "@/components/order-information"
+import {
+    Body,
+    Container,
+    Head,
+    Heading,
+    Html,
+    Preview,
+    Tailwind,
+} from "@react-email/components"
+import { OrderInformation } from "@/email/components/order-information"
 
 type PurchaseReceiptEmailProps = {
     product: {
@@ -35,10 +35,10 @@ PurchaseReceiptEmail.PreviewProps = {
 } satisfies PurchaseReceiptEmailProps
 
 export default function PurchaseReceiptEmail({
-                                                 product,
-                                                 order,
-                                                 downloadVerificationId,
-                                             }: PurchaseReceiptEmailProps) {
+    product,
+    order,
+    downloadVerificationId,
+}: PurchaseReceiptEmailProps) {
     return (
         <Html>
             <Preview>Download {product.name} and view receipt</Preview>

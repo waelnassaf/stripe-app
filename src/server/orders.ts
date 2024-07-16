@@ -1,6 +1,7 @@
 "use server"
 
 import db from "@/prisma/db"
+import { notFound } from "next/navigation"
 
 export async function userOrderExists(email: string, productId: string) {
     return (
@@ -9,4 +10,14 @@ export async function userOrderExists(email: string, productId: string) {
             select: { id: true },
         })) != null
     )
+}
+
+export async function deleteOrder(id: string) {
+    const order = await db.order.delete({
+        where: { id },
+    })
+
+    if (order == null) return notFound()
+
+    return order
 }
