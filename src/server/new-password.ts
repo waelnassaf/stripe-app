@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs"
 
 import { getUserByEmail } from "@/data/user"
 import { NewPasswordSchema } from "@/schemas"
-import prisma from "../../prisma/client"
+import db from "../../prisma/db"
 import { getPasswordResetTokenByToken } from "@/data/password-reset-token"
 
 export const newPassword = async (
@@ -44,12 +44,12 @@ export const newPassword = async (
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    await prisma.user.update({
+    await db.user.update({
         where: { id: existingUser.id },
         data: { password: hashedPassword },
     })
 
-    await prisma.passwordResetToken.delete({
+    await db.passwordResetToken.delete({
         where: { id: existingToken.id },
     })
 
