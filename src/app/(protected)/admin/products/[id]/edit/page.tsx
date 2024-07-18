@@ -1,4 +1,4 @@
-import db from "../../../../../../../prisma/db"
+import db from "../../../../../../db/db"
 
 import { ProductForm } from "@/app/(protected)/_components/product-form"
 

@@ -1,4 +1,4 @@
-import db from "../../../prisma/db"
+import db from "../../db/db"
 import { wait } from "@/lib/helpers"
 import { formatCurrency, formatNumber } from "@/lib/formatters"
 import { GoPackage } from "react-icons/go"

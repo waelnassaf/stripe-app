@@ -1,6 +1,4 @@
-//This route is not functioning at all!!
-
-import db from "../../../../prisma/db"
+import db from "@/db/db"
 import { NextRequest, NextResponse } from "next/server"
 import Stripe from "stripe"
 import { Resend } from "resend"
@@ -33,6 +31,7 @@ export async function POST(req: NextRequest) {
             email,
             orders: { create: { productId, pricePaidInCents } },
         }
+
         const {
             orders: [order],
         } = await db.user.upsert({
@@ -50,7 +49,8 @@ export async function POST(req: NextRequest) {
         })
 
         await resend.emails.send({
-            from: `Support <${process.env.SENDER_EMAIL}>`,
+            // from: `Support <${process.env.SENDER_EMAIL}>`,
+            from: `${process.env.SENDER_EMAIL}`,
             to: email,
             subject: "Order Confirmation",
             react: (
@@ -61,8 +61,7 @@ export async function POST(req: NextRequest) {
                 />
             ),
         })
-    } else {
-        console.log("Not success")
     }
+
     return new NextResponse()
 }

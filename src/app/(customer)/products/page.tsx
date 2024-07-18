@@ -1,5 +1,5 @@
 import { ProductCard, ProductCardSkeleton } from "@/components/product-card"
-import db from "../../../../prisma/db"
+import db from "../../../db/db"
 import { cache } from "@/lib/cache"
 import { Suspense } from "react"
 

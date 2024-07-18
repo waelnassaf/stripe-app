@@ -3,7 +3,7 @@ import { v4 as uuid } from "uuid"
 import { getVerificationTokenByEmail } from "@/data/verification-token"
 import { getPasswordResetTokenByEmail } from "@/data/password-reset-token"
 import { getTwoFactorTokenByEmail } from "@/data/two-factor-token"
-import db from "../../prisma/db"
+import db from "../db/db"
 
 export const generateVerificationToken = async (email: string) => {
     const token = uuid()

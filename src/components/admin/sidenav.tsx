@@ -2,6 +2,7 @@ import Link from "next/link"
 import NavLinks from "@/components/admin/nav-links"
 import { BiPowerOff } from "react-icons/bi"
 import { signOut } from "@/auth"
+import UserButton from "@/components/auth/user-button"
 
 export default function SideNav() {
     return (

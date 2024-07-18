@@ -1,7 +1,5 @@
 "use client"
 
-// import
-
 import { useCurrentUser } from "@/hooks/use-current-user"
 import Image from "next/image"
 import { LogoutButton } from "@/components/auth/logout-button"

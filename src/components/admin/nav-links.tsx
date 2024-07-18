@@ -4,6 +4,7 @@ import { GoPackage } from "react-icons/go"
 import { PiShoppingCartSimple } from "react-icons/pi"
 import { IoIosHome } from "react-icons/io"
 import { GrGroup } from "react-icons/gr"
+import { BsGear } from "react-icons/bs"
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -20,6 +21,7 @@ const links = [
     },
     { name: "Customers", href: "/admin/users", icon: GrGroup },
     { name: "Sales", href: "/admin/orders", icon: PiShoppingCartSimple },
+    { name: "Settings", href: "/admin/settings", icon: BsGear },
 ]
 
 export default function NavLinks() {

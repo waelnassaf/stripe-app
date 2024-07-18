@@ -2,7 +2,7 @@
 
 import * as z from "zod"
 import bcrypt from "bcryptjs"
-import db from "../../prisma/db"
+import db from "../db/db"
 import { SettingsSchema } from "@/schemas"
 import { getUserByEmail, getUserById } from "@/data/user"
 import { currentUser } from "@/lib/auth"
