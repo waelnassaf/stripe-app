@@ -1,5 +1,6 @@
 //All this code does is make sure Prisma is working correctly with Next.js
 //Local variable is "db" and global is "prisma"
+
 import { PrismaClient } from "@prisma/client"
 
 declare global {
