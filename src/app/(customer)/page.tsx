@@ -33,6 +33,7 @@ export default function HomePage() {
                 title="Most Popular"
                 productsFetcher={getMostPopularProducts}
             />
+
             <ProductGridSection
                 title="Newest"
                 productsFetcher={getNewestProducts}
