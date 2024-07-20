@@ -1,4 +1,4 @@
-import db from "../../../../db/db"
+import db from "@/db/db"
 import { formatCurrency } from "@/lib/formatters"
 import Image from "next/image"
 import Link from "next/link"
