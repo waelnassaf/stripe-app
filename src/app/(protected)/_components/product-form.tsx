@@ -10,18 +10,26 @@ import { formatCurrency } from "@/lib/formatters"
 import { useFormState, useFormStatus } from "react-dom"
 import { Product } from ".prisma/client"
 import Image from "next/image"
+
 export const ProductForm = ({ product }: { product?: Product | null }) => {
     const [priceInCents, setPriceInCents] = useState<number | undefined>(
         product?.priceInCents
     )
-    const { pending } = useFormStatus()
     const [error, action] = useFormState(
         product == null ? createProduct : updateProduct.bind(null, product.id),
         {}
     )
 
+    const { pending } = useFormStatus()
+
     return (
         <form className="space-y-4 mb-5" action={action}>
+            <input
+                type="text"
+                className="input input-bordered"
+                value={"asda"}
+                disabled={pending}
+            />
             <label className="form-control w-full" htmlFor="name">
                 <div className="label">
                     <span className="label-text">Product Name</span>
@@ -128,15 +136,23 @@ export const ProductForm = ({ product }: { product?: Product | null }) => {
                     <p className="text-red-700 mt-2 text-sm">{error.image}</p>
                 )}
             </label>
-            {/*<FormError message={error} />*/}
-            {/*<FormSuccess message={success} />*/}
-            <button
-                type="submit"
-                className={`btn btn-neutral w-full`}
-                disabled={pending}
-            >
-                {pending ? "Adding..." : "Add"}
-            </button>
+            {/*<FormError message={"There are errors"} />*/}
+            {/*/!*<FormSuccess message={"Product added succesfully"} />*!/*/}
+            <SubmitButton />
         </form>
+    )
+}
+
+function SubmitButton() {
+    const { pending } = useFormStatus()
+
+    return (
+        <button
+            type="submit"
+            className={`btn btn-neutral px-5`}
+            disabled={pending}
+        >
+            {pending ? "Saving..." : "Save"}
+        </button>
     )
 }

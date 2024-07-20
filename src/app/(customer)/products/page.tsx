@@ -1,5 +1,5 @@
 import { ProductCard, ProductCardSkeleton } from "@/components/product-card"
-import db from "../../../db/db"
+import db from "@/db/db"
 import { cache } from "@/lib/cache"
 import { Suspense } from "react"
 
@@ -12,21 +12,23 @@ const getProducts = cache(() => {
 
 export default function ProductsPage() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Suspense
-                fallback={
-                    <>
-                        <ProductCardSkeleton />
-                        <ProductCardSkeleton />
-                        <ProductCardSkeleton />
-                        <ProductCardSkeleton />
-                        <ProductCardSkeleton />
-                        <ProductCardSkeleton />
-                    </>
-                }
-            >
-                <ProductsSuspense />
-            </Suspense>
+        <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <Suspense
+                    fallback={
+                        <>
+                            <ProductCardSkeleton />
+                            <ProductCardSkeleton />
+                            <ProductCardSkeleton />
+                            <ProductCardSkeleton />
+                            <ProductCardSkeleton />
+                            <ProductCardSkeleton />
+                        </>
+                    }
+                >
+                    <ProductsSuspense />
+                </Suspense>
+            </div>
         </div>
     )
 }

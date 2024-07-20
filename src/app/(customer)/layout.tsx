@@ -1,7 +1,7 @@
 import { Nav, NavLink } from "@/components/customer/nav"
+import React from "react"
 
-//???
-// export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic"
 
 export default function Layout({
     children,
@@ -15,7 +15,9 @@ export default function Layout({
                 <NavLink href="/products">Products</NavLink>
                 <NavLink href="/orders">My Orders</NavLink>
             </Nav>
-            <div className="container my-6">{children}</div>
+            <div className="container my-6 px-5 max-w-7xl mx-auto">
+                {children}
+            </div>
         </>
     )
 }
