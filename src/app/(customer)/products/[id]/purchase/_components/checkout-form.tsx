@@ -69,6 +69,7 @@ function Form({
 }) {
     const stripe = useStripe()
     const elements = useElements()
+
     const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState<string>()
     const [email, setEmail] = useState<string>()
@@ -112,7 +113,7 @@ function Form({
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className="card card-compact">
+            <div className="card card-compact my-4">
                 <p className="card-title">Checkout</p>
                 {errorMessage && <p className="card-title">{errorMessage}</p>}
                 <div className="card-body">
@@ -123,9 +124,9 @@ function Form({
                         />
                     </div>
                 </div>
-                <div className="card-actions">
+                <div className="card-actions text-white">
                     <button
-                        className="w-full btn btn-success"
+                        className="w-1/4 btn btn-success"
                         disabled={
                             stripe == null || elements == null || isLoading
                         }

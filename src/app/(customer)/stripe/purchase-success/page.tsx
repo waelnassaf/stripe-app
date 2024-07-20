@@ -16,13 +16,13 @@ export default async function SuccessPage({
         searchParams.payment_intent
     )
 
-    if (paymentIntent.metadata.productId == null) return notFound()
+    if (paymentIntent.metadata.productId == null) notFound()
 
     const product = await db.product.findUnique({
         where: { id: paymentIntent.metadata.productId },
     })
 
-    if (product == null) return notFound()
+    if (product == null) notFound()
 
     const isSuccess = paymentIntent.status === "succeeded"
 
@@ -34,31 +34,31 @@ export default async function SuccessPage({
             <div className="flex gap-4 items-center">
                 <div className="aspect-video flex-shrink-0 w-1/3 relative">
                     <Image
-                        src={product.imagePath}
+                        src={product?.imagePath}
                         fill
-                        alt={product.name}
+                        alt={product?.name}
                         className="object-cover"
                     />
                 </div>
                 <div>
                     <div className="text-lg">
-                        {formatCurrency(product.priceInCents / 100)}
+                        {formatCurrency(product?.priceInCents / 100)}
                     </div>
-                    <h1 className="text-2xl font-bold">{product.name}</h1>
+                    <h1 className="text-2xl font-bold">{product?.name}</h1>
                     <div className="line-clamp-3 text-muted-foreground">
-                        {product.description}
+                        {product?.description}
                     </div>
                     <button className="mt-4 btn btn-ghost">
                         {isSuccess ? (
                             <a
                                 href={`/products/download/${await createDownloadVerification(
-                                    product.id
+                                    product?.id
                                 )}`}
                             >
                                 Download
                             </a>
                         ) : (
-                            <Link href={`/products/${product.id}/purchase`}>
+                            <Link href={`/products/${product?.id}/purchase`}>
                                 Try Again
                             </Link>
                         )}

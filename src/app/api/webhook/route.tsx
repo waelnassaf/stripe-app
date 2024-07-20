@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
             email,
             orders: { create: { productId, pricePaidInCents } },
         }
+
         const {
             orders: [order],
         } = await db.user.upsert({
