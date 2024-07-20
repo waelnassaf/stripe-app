@@ -17,13 +17,22 @@ export default function MyOrdersPage() {
                     </p>
                 </div>
                 <div className="card-body">
-                    <div className="space-y-2">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" required name="email" id="email" />
+                    <label className="form-control w-full" htmlFor="email">
+                        <div className="label">
+                            <span className="label-text">Email</span>
+                        </div>
+                        <input
+                            type="email"
+                            id="email"
+                            className={`input input-bordered w-full ${data.error && "input-error"}`}
+                            placeholder="john@doe.com"
+                            required
+                            name="email"
+                        />
                         {data.error && (
                             <div className="text-destructive">{data.error}</div>
                         )}
-                    </div>
+                    </label>
                 </div>
                 <p>{data.message ? <p>{data.message}</p> : <SubmitButton />}</p>
             </div>
@@ -36,7 +45,7 @@ function SubmitButton() {
 
     return (
         <button
-            className="w-full btn btn-neutral"
+            className="w-1/5 btn btn-neutral"
             disabled={pending}
             type="submit"
         >
