@@ -1,5 +1,6 @@
 import React from "react"
 import SideNav from "@/components/admin/sidenav"
+import { RoleGate } from "@/components/auth/role-gate"
 
 //Prevent Admin Pages caching
 // export const dynamic = "force-dynamic"
@@ -10,7 +11,7 @@ export default function DashboardLayout({
     children: React.ReactNode
 }>) {
     return (
-        <>
+        <RoleGate allowedRole={"ADMIN"}>
             <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
                 <div className="w-full flex-none md:w-64">
                     <SideNav />
@@ -19,6 +20,6 @@ export default function DashboardLayout({
                     {children}
                 </div>
             </div>
-        </>
+        </RoleGate>
     )
 }

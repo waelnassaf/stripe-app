@@ -3,7 +3,6 @@
 import { BeatLoader } from "react-spinners"
 import { useSearchParams } from "next/navigation"
 import { useCallback, useEffect, useState } from "react"
-
 import { newVerification } from "@/server/new-verification"
 import CardWrapper from "@/components/auth/card-wrapper"
 import { FormError } from "@/components/form-error"
