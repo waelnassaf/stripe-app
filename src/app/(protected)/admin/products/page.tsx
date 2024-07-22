@@ -1,5 +1,5 @@
 import Link from "next/link"
-import db from "../../../../db/db"
+import db from "@/db/db"
 import { formatCurrency, formatNumber } from "@/lib/formatters"
 import { FaEllipsisVertical } from "react-icons/fa6"
 import {

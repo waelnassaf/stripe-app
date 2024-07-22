@@ -62,5 +62,5 @@ export async function POST(req: NextRequest) {
         })
     }
 
-    return new NextResponse("Success", { status: 200 })
+    return new NextResponse()
 }
