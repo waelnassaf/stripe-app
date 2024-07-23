@@ -8,7 +8,7 @@ export default function AdminLoading() {
             <ClipLoader
                 color={"#000"}
                 loading={true}
-                size={100}
+                size={50}
                 aria-label="Loading Spinner"
             />
         </div>
